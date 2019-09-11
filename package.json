@@ -10,17 +10,29 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.tfo"
 	],
-	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.tfo",
+				"title": "Target File Open"
+			}
+		],
+		"configuration": [
+			{
+				"title": "Open Target File",
+				"properties": {
+					"tfo.path": {
+						"type": "string",
+						"default": "",
+						"description": "target file path"
+					}
+				}
 			}
 		]
 	},
+	"main": "./out/extension.js",
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
